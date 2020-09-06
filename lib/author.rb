@@ -3,11 +3,14 @@ class Author
 
   def initialize(author_info)
     @name = author_info.values.join(' ')
+    # @name = author_info[:first_name] + " " + author_info[:last_name]
     @books = []
   end
 
   def write(title, publication_year)
-    @title = title
+    book_info = {}
+    book_info[:title] = title
+    
 
   end
 end

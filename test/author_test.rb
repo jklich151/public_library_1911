@@ -6,24 +6,24 @@ require './lib/author'
 class AuthorTest < MiniTest::Test
 
   def test_it_exists
-    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+    author1 = Author.new({first_name: "Charlotte", last_name: "Bronte"})
 
-    assert_instance_of Author, charlotte_bronte
+    assert_instance_of Author, author1
   end
 
   def test_it_has_attributes
-    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+    author1 = Author.new({first_name: "Charlotte", last_name: "Bronte"})
 
-    assert_equal "Charlotte Bronte", charlotte_bronte.name
-    assert_equal [], charlotte_bronte.books
+    assert_equal "Charlotte Bronte", author1.name
+    assert_equal [], author1.books
   end
 
-  def test_
-    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
-    jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+  def test_test_it_can_write
+    author1 = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+    book = author1.write("Jane Eyre", "October 16, 1847")
 
-    assert_instance_of jane_eyre, charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    assert_instance_of book, author1.write("Jane Eyre", "October 16, 1847")
     assert_equal "Book", jane_eyre.class
-    assert_equal "Jane Eyre", jane_eyre.title
+    assert_equal "Jane Eyre", book.title
   end
 end
